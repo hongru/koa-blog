@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>把孤单当成枕头上的温暖</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/editor.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/posts/list/">文章列表</a></li>
+                <li><a href="/about/">关于我</a></li>
+                <% if (session.user) { %>
+                <li><a href="/write/">写文章</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>

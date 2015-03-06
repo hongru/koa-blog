@@ -1,0 +1,52 @@
+﻿<% include header %>
+<div class="mainContent">
+    <div class="blogitem">
+        <article>
+            <div class="postDetail">
+                <h2 class="postTitle"><a href="javascript:;"><%= post.title %></a></h2>
+                <div class="postOption">
+                    <p>
+                        <span><%= post.meta.updateAt.toISOString().replace(/T.+$/,'')%></span>
+                        <span>发布</span>
+                        <% if (session.user) { %>
+                        <a href="/posts/edit/<%= post._id %>">编辑</a>
+                        <a href="javascript:;" id="btnDelete">删除</a>
+                        <% } %>
+                    </p>
+                </div>
+            </div>
+            <ul class="text">
+                <%- post.content %>
+            </ul>
+            <div>
+                <ul>
+                <% post.tags.forEach(function(tag){ %>
+                    <% var info = tagList.filter(function(item){ %>
+                        <% return item.name === tag %>
+                    <% }) %>
+                    <% var link = "/tags/" + info[0]._id %>
+                    <li><a href="<%= link %>"><%= tag %></a></li>
+                <% }) %>
+                </ul>
+            </div>
+        </article> 
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('#btnDelete').on('click',function(){
+            $.ajax({
+                url:"/posts/delete"  ,
+                method:"POST",
+                data:"id=<%= post._id %>"
+            }).done(function(res){
+                if(res.code === "S_OK"){
+                    window.location.href = "/";
+                }
+            }).fail(function(){
+            })
+        });
+    });
+</script>
+<% include footer %>

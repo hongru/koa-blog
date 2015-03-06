@@ -1,0 +1,17 @@
+﻿<% include header %>
+<div class="mainContent">
+    <% include side %>
+    <div class="blogitem">
+
+        <ul class="postList">
+            <% postList.forEach(function(post){ %>
+            <% post.link = "/posts/" + post._id %>
+            <li>
+            <span class=""><%=
+            post.meta.updateAt.toISOString().replace(/T.+$/,'') %></span><a href="<%= post.link %>"><%= post.title %></a></h2>
+            <% }) %>
+            </li>
+        </ul>
+    </div>
+</div>
+<% include footer %>

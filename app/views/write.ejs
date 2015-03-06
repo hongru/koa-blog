@@ -1,0 +1,46 @@
+﻿<% include header %>
+<div class="container mainContent">
+    <h1 class="h4">写文章</h1>    
+    <div class="postArea">
+        <div class="postTitle">
+            <input type="text" name="title" id="txtTitle" class="" placeholder="标题：把笑容当成枝桠上的阳光" value="<%- post.title %>">
+        </div>
+
+        <div class="postTags">
+            <input type="text" id="txtTag" class="" placeholder="标签，如：node.js" value="">          
+            <ul style="display:<%= post.tags ? "" : "none"%>" id="ulTagItemList" class="tagItemContainer">
+                <% if(post.tags) { %>
+                <%     post.tags.forEach(function(tag){ %>
+                           <li><input type="text" value="<%- tag %>" readonly="" /><a href="javascript:;">×</a></li> 
+                <%     }) %>
+                <% } %>
+            </ul>
+            <ul style="display:none;" id="ulTagList" class="tagTipContainer"> </ul>
+        </div>
+
+        <div class="editor">
+            <div id="divToolbar" class="wmd-toolbar"></div>
+            <div class="wmd">
+                <textarea id="txtContent" class="wmd-input" value=""><%- post.content %></textarea>
+            </div>
+            <div id="divPreview" class="wmd-preview"> </div>
+        </div>
+    </div>
+    
+    <div class="optionArea">
+        <button class="btn-submit" id="btnSubmit"> <%= post._id ? "保存编辑" :
+        "发布文章" %></button>
+    </div>
+</div>
+<script>
+    var postId = "<%- post._id %>";
+    <% tagList = tagList.map(function(tag){ %>
+    <%     return tag.name; %>
+    <% }) %>
+    var tagList = <%- JSON.stringify(tagList) %>;
+
+</script>
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/editor.js" type="text/javascript"></script>
+<script src="/js/write.js" type="text/javascript"></script>
+<% include footer %>

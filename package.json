@@ -1,0 +1,35 @@
+{
+  "name": "NodeBlog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "blog",
+    "koa.js"
+  ],
+  "dependencies":{
+    "koa":"0.18.1",
+    "koa-views":"2.1.2",
+    "koa-ejs":"1.1.3",
+    "koa-static":"1.4.9",
+    "koa-bodyparser":"1.4.0",
+    "koa-middlewares":"2.1.0",
+    "koa-router":"4.2.0",
+    "bluebird":"2.9.13",
+    "co":"4.4.0",
+    "thunkify-wrap":"1.0.4",
+    "underscore":"1.8.2",
+    "mongodb":"1.4.33",
+    "markdown":"0.5.0",
+    "mongoose":"3.8.24",
+    "koa-session-store":"1.1.1",
+    "koa-session-mongoose":"0.4.0",
+    "ejs": "2.3.1"
+  },
+  "author": "cenan.chr",
+  "license": "MIT"
+}

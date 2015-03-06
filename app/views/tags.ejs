@@ -1,0 +1,16 @@
+﻿<% include header %>
+<div class="mainContent">
+    <div class="blogitem">
+
+        <% var postList = tagInfo.posts; %>
+        <ul class="postList">
+            <% postList.forEach(function(post){ %>
+            <% post.link = "/posts/" + post.post %>
+            <li>
+                <a href="<%= post.link %>"><%= post.title %></a></h2>
+            <% }) %>
+            </li>
+        </ul>
+    </div>
+</div>
+<% include footer %>

@@ -1,0 +1,20 @@
+﻿<% include header %>
+<div class="mainContent">
+    <% include side %>
+    <div class="blogitem">
+
+        <% postList.forEach(function(post){ %>
+        <% post.link = "/posts/" + post._id %>
+        <article>
+            <h2 class="title"><a href="<%= post.link %>"><%= post.title %></a></h2>
+            <div class="text">
+                <%- post.content %>
+            </div>
+            <div class="textfoot">
+                <a href="<%= post.link %>">阅读全文</a>
+            </div>
+        </article> 
+        <% }) %>
+    </div>
+</div>
+<% include footer %>
