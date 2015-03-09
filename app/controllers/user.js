@@ -35,5 +35,29 @@ module.exports = {
         } else {
             this.redirect('/login?c=1');
         }
+    },
+
+    renderRegister: function * () {//console.log('route register')
+        var codeMap = {
+            "1":"账号已经存在"
+        };
+        
+        var code = this.query['c'];
+
+        yield this.render('register',{
+            msg: code && codeMap[code]
+        });
+    },
+
+    register: function * () {
+        var data = this.request.body;
+        var user = yield userModel.getUser(data.account);
+        if (user) {
+            //console.log('用户已存在', user);
+            this.redirect('/register?c=1');
+        } else {
+            yield userModel.saveUser(data);
+            this.redirect('/');
+        }
     }
 };

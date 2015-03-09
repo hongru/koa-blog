@@ -46,5 +46,11 @@ exports.init = function(app) {
 
     //登录
     app.post('/user/login', UserController.login);
+
+    //注册页
+    app.get('/register', UserController.renderRegister);
+
+    //注册请求
+    app.post('/user/register', UserController.register);
 };
 

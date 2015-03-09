@@ -1,7 +1,7 @@
-﻿@charset "gb2312";
+﻿@charset "utf8";
 /* CSS Document */
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body { background: #DDD6CC; font: 12px "宋体", "Arial Narrow", HELVETICA; color: #3F3E3C; line-height: 1.5; margin:0;}
+body { background: #DDD6CC; font: 12px 'Microsoft Yahei', "Arial Narrow", HELVETICA; color: #3F3E3C; line-height: 1.5; margin:0;}
 img { border: 0; vertical-align: middle }
 p { display: block; }
 ul { list-style: none; }
@@ -11,7 +11,7 @@ code {word-wrap: break-word;}
 .blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
 .vHide { visibility:hidden;}
 /* nav */
-header { width: 100%; height: 43px; background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(#EFEEEC), to(#fff)); box-shadow: #D0C9C0 2px 2px 3px ;position:absolute;top:0px;}
+header { width: 100%; height: 43px; background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(#EFEEEC), to(#fff)); position:absolute;top:0px;}
 header nav { margin: 0 auto; width: 980px; text-align: center }
 header nav ul{ margin: 0 }
 header nav ul li { line-height: 43px; display: block }
@@ -56,7 +56,7 @@ aside section h2 { background: #01ABAA; color: #FFF; padding-left: 30px;margin:0
 .text p { line-height: 24px; margin-bottom: 10px ;word-wrap: break-word;}
 .textimg { text-align: center }
 .textimg img { max-width: 500px; width:expression(document.body.clientWidth > 500? "500px": "auto" );}/*for ie6*/
-.textfoot { padding: 20px 60px; border-top: 1px solid #dddcdb; text-align: right; box-shadow: #999 2px 2px 3px }
+.textfoot { padding: 20px 60px; border-top: 1px solid #dddcdb; text-align: right;  }
 .textfoot a { margin-left: 10px; }
 .pages { padding: 0 60px 25px; background: #F4F3EF; text-align: right }
 .pages span { background: #01ABAA; color: #fff; }

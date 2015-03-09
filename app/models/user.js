@@ -7,7 +7,7 @@ module.exports = {
 
     saveUser : function * (user) {
         var user = new User(user);
-
+        //console.log(user)
         var save = thunkify(user.save,user);
 
         yield save();
