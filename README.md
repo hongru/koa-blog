@@ -1,9 +1,14 @@
 Blog
 ====
 
-a blog project build with koa.js
+a blog project build with koa.js.
 
-this blog use MongoDB.
+you need 3 Step to run this koa blog app.
+
+* Install MongoDB and Start
+* Install Nodejs>=0.12 & npm install
+* Start app with `node --harmony`
+
 
 ### Guides of MongoDB
 
@@ -52,4 +57,21 @@ then
 [root@localhost mongodb]# ./bin/mongod -f mongodb.conf   
 all output going to: /opt/mongodb/log/mongodb.log  
 forked process: 3377  
+```
+
+### Node & npm
+
+you need `Nodejs` version `>=0.12`
+you can use [nvm](https://www.npmjs.com/package/nvm) or [n](https://www.npmjs.com/package/n) to install Nodejs and manage multi version of Nodejs
+
+After Node & npm installed
+
+```
+npm install
+```
+
+### Start App
+
+```
+node --harmony app.js
 ```
